@@ -19,7 +19,8 @@ Route::post('/sendComment/{id}', 'CommentController@send')->name('billet.comment
 
 Route::group([
 	'prefix' => 'admin',
-	'middleware' => 'auth'
+	'middleware' => 'auth',
+	'namespace' => 'Back'
 ], function($router) {
 
 	$router->get('/', function() {

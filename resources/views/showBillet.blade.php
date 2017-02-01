@@ -25,13 +25,15 @@
                     @else
 
                         @foreach($commentaires as $commentaire)
-                        <div class="well well-sm">
-                            <h3>{{ $commentaire->pseudo }}</h3>
-                            <p>
-                                {{ $commentaire->contenu }}
-                                <small>Publié {{ $commentaire->created_at->diffForhumans() }}</small>
-                            </p>
-                        </div>
+                            @if($commentaire->statut == 1)
+                                <div class="well well-sm">
+                                    <h3>{{ $commentaire->pseudo }}</h3>
+                                    <p>
+                                        {{ $commentaire->contenu }}
+                                        <small>Publié {{ $commentaire->created_at->diffForhumans() }}</small>
+                                    </p>
+                                </div>
+                            @endif
                         @endforeach
 
                     @endif
@@ -64,4 +66,5 @@
         </div>
     </div>
 </div>
+
 @endsection
