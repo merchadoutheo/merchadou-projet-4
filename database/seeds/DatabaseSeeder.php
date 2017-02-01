@@ -17,7 +17,7 @@ class DatabaseSeeder extends Seeder
 			'password' => bcrypt('mdp')
         ]);
         
-        factory(App\Models\Billet::class, 5)->create();
-        factory(App\Models\Commentaire::class, 25)->create();
+        factory(App\Models\Billet::class, 25)->create();
+        factory(App\Models\Commentaire::class, 50)->create();
     }
 }

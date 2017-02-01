@@ -20,11 +20,9 @@ Route::post('/sendComment/{id}', 'CommentController@send')->name('billet.comment
 Route::group([
 	'prefix' => 'admin',
 	'middleware' => 'auth',
-	'namespace' => 'Back'
+	'namespace' => 'Admin'
 ], function($router) {
 
-	$router->get('/', function() {
-		echo 'admin';
-	});
+	$router->get('/','PostController@index')->name('accueil.admin');
 
 });
