@@ -44,8 +44,8 @@
                     <!-- Left Side Of Navbar -->
                     @if(Auth::check())
                     <ul class="nav navbar-nav">
-                        <li><a href="#">Billets</a></li>
-                        <li><a href="#">Commentaires</a></li>
+                        <li><a href="{{ route('accueil.admin') }}">Billets</a></li>
+                        <li><a href="{{ route('index.commentaire') }}">Commentaires</a></li>
                     </ul>
                     @endif
 
