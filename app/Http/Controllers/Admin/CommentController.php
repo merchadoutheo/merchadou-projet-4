@@ -12,8 +12,25 @@ class CommentController extends Controller
     {
     	$commentaires = Commentaire::latest()->paginate(15);
 
+
     	return view('admin/indexCommentaires')->with([
     		'commentaires' => $commentaires
+
     	]);
+    }
+    public function changeStatut($id)
+    {
+    	$commentaire = Commentaire::find($id);
+
+    	if ($commentaire->statut == 1) {
+    		$commentaire->statut = 0;
+    	}
+    	else{
+    		$commentaire->statut = 1;
+    	}
+
+    	$commentaire->save();
+
+    	return redirect()->route('index.commentaire');
     }
 }
