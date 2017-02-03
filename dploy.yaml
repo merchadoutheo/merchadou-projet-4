@@ -1,0 +1,14 @@
+master:
+     scheme: sftp
+     port: 22
+     host: "91.121.109.198"
+     user: "theoformation"
+     pass: "j_1Es5zPdajf9uFu"
+     check: true
+     privateKey: "~/.ssh/id_rsa"
+     publicKey: "~/.ssh/id_rsa.pub"
+     exclude: ["dploy.yaml"]
+     branch: "staging"
+     path:
+         local: ""
+         remote: "sd/projet4/"

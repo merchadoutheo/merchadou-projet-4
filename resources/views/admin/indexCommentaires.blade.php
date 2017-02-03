@@ -3,7 +3,7 @@
 @section('content')
 <div class="container">
     <div class="row">
-        <div class="col-md-8 col-md-offset-2">
+        <div class="col-md-12">
             <div class="panel panel-default">
                 <div class="panel-heading">Administration des commentaires
                 </div>
@@ -20,7 +20,7 @@
                                 <thead>
                                     <tr>
                                         <th class="col-md-1">ID</th>
-                                        <th class="col-md3">Titre du Billet</th>
+                                        <th class="col-md-3">Titre du Billet</th>
                                         <th class="col-md-2">Pseudo</th>
                                         <th class="col-md-3">Date d'ajout</th>
                                         <th class="col-md-3">Statut</th>
@@ -31,7 +31,7 @@
                                 @foreach($commentaires as $commentaire)
                                 <tr>
                                     <td>{{ $commentaire->id }}</td>
-                                    <td>{{ $commentaire->billet->getTitre() }}</td>
+                                    <td>{{ $commentaire->billet->titre }}</td>
                                     <td>{{ $commentaire->pseudo }}</td>
                                     <td>{{ $commentaire->created_at }}</td>
                                     <td>
