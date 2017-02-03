@@ -11,7 +11,7 @@
 
                     <h2>{{ $billet->titre }}</h2>
                     <p>
-                        {{ $billet->contenu }}<br>
+                        {!! $billet->contenu !!}<br>
                         <small>Publié {{ $billet->created_at->diffForHumans() }}</small>
                     </p>
                     <a href='{{ route("accueil") }}'>Retour à la liste des billets</a>

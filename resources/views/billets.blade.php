@@ -18,7 +18,7 @@
                         @foreach($billets as $billet)
                             <h2>{{ $billet->titre }}</h2>
                             <p>
-                                {{ str_limit($billet->contenu, $limit = 150, $end = '...') }}<br>
+                                {!! str_limit($billet->contenu, $limit = 150, $end = '...') !!}<br>
                                 <small>Publié {{ $billet->created_at->diffForHumans() }}</small>
                                 <a href="/showBillet/{{ $billet->id }}">Voir le billet</a>
                             </p>

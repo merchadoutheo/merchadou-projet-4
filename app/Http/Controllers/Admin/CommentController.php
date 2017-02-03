@@ -18,6 +18,7 @@ class CommentController extends Controller
 
     	]);
     }
+
     public function changeStatut($id)
     {
     	$commentaire = Commentaire::find($id);
@@ -32,5 +33,23 @@ class CommentController extends Controller
     	$commentaire->save();
 
     	return redirect()->route('index.commentaire');
+    }
+
+    public function suppression($id)
+    {
+        $commentaire = Commentaire::findOrFail($id);
+
+        $commentaire->delete();
+
+        return redirect()->route('index.commentaire');
+    }
+
+    public function voirCommentaire($id)
+    {
+        $commentaire = Commentaire::findOrFail($id);
+
+        return view('admin/voirCommentaire')->with([
+            'commentaire' => $commentaire
+        ]);
     }
 }

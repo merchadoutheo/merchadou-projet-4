@@ -18,6 +18,6 @@ class DatabaseSeeder extends Seeder
         ]);
         
         factory(App\Models\Billet::class, 25)->create();
-        factory(App\Models\Commentaire::class, 50)->create();
+        factory(App\Models\Commentaire::class, 100)->create();
     }
 }
