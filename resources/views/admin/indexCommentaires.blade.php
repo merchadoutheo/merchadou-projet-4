@@ -34,25 +34,25 @@
                                     <td>{{ $commentaire->billet->titre }}</td>
                                     <td>{{ $commentaire->pseudo }}</td>
                                     <td>{{ $commentaire->created_at }}</td>
-                                    <td>
+                                    <td class="statut">
                                         @if($commentaire->statut == 1)
-                                            <a href="{{ route('commentaire.changeStatut', $commentaire->id) }}" class="btn btn-success btn-sm">
+                                            <a href="{{ route('commentaire.changeStatut', $commentaire->id) }}" class="btn btn-success btn">
                                             <span class="glyphicon glyphicon-ok"> En ligne</span>
                                             </a>
                                         @else
-                                            <a href="{{ route('commentaire.changeStatut', $commentaire->id) }}" class="btn btn-warning btn-sm">
+                                            <a href="{{ route('commentaire.changeStatut', $commentaire->id) }}" class="btn btn-warning">
                                             <span class="glyphicon glyphicon-time"> En attente</span>
                                             </a>
                                         @endif
                                     </td>
                                     <td>
-                                        <a href="{{ route('commentaire.voir', $commentaire->id) }}" class="btn btn-primary btn-sm">
+                                        <a href="{{ route('commentaire.voir', $commentaire->id) }}" class="btn btn-primary btn">
                                             <span class="glyphicon glyphicon-eye-open"></span>
                                         </a>
                                     </td>
                                     <td>
                                         <a href="{{ route('commentaire.supprimer', $commentaire->id) }}">
-                                        <button class="btn btn-default btn-sm" data-toggle='modal' data-billet-id="{{ $commentaire->id }}" data-target="#modal">
+                                        <button class="btn btn-default btn" data-toggle='modal' data-billet-id="{{ $commentaire->id }}" data-target="#modal">
                                          <span class="glyphicon glyphicon-trash"></span>   
                                         </button>
                                         </a>

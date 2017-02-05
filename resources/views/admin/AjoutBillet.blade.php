@@ -14,7 +14,7 @@
 
                 <div class="panel-body">
 
-                    <form action="{{ route('billet.ajout') }}" method="POST">
+                    <form action="{{ route('billet.ajout') }}" method="POST" enctype="multipart/form-data">
                         {{ csrf_field() }}
                         <div class="form-group{{ $errors->has('titre') ? ' has-error' : '' }}">
                             <label for="titre">Titre</label>
@@ -36,6 +36,13 @@
                               <option value="1">En ligne</option>
                               <option value="0">Brouillon</option>
                             </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="vignette">Vignette</label>
+                            <input type="file" name="vignette" id="vignette">Choisissez une image</input>
+                            @if($errors->has('vignette'))
+                            <span class="help-block">{{ $errors->first('vignette') }}</span>
+                            @endif
                         </div>
                         <button class="btn btn-primary">Ajouter le billet</button>
                     </form>

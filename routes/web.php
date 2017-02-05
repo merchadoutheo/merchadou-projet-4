@@ -14,7 +14,7 @@
 Auth::routes();
 Route::get('/', 'PostController@index')->name('accueil');
 Route::get('/home', 'HomeController@index');
-Route::get('/showBillet/{id}', 'PostController@show');
+Route::get('/showBillet/{id}', 'PostController@show')->name('billet.voir');
 Route::post('/sendComment/{id}', 'CommentController@send')->name('billet.comment');
 
 Route::group([

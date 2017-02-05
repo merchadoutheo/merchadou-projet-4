@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Admin;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Storage;
 use App\Http\Controllers\Controller;
 use App\Models\Billet;
 
@@ -53,17 +54,20 @@ class PostController extends Controller
         $validation = \Validator::make($request->all(), [
             'titre' => 'required|min:3',
             'contenu' => 'required|min:10|max:1000',
+            'vignette' => 'image'
         ]);
 
         if ($validation->fails())
         {
             return redirect()->back()->withErrors($validation)->withInput();
         }
-
+        $ext = $request->vignette->guessClientExtension();
+        $request->vignette->storeAs('img/Vignette/', str_slug('vignette-'.$request->titre).'.'.$ext);
         $billet = new Billet;
         $billet->titre = $request->titre;
         $billet->contenu = $request->contenu;
         $billet->statut = $request->statut;
+        $billet->urlImg = 'img/Vignette/'.str_slug('vignette-'.$request->titre).'.'.$ext;
         $billet->user_id = 1;
         $billet->save();
 

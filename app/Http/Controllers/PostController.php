@@ -9,7 +9,7 @@ class PostController extends Controller
 {
     public function index()
     {
-    	$billets = Billet::latest()->whereStatut(1)->paginate(5);
+    	$billets = Billet::latest()->whereStatut(1)->paginate(8);
     	
     	return view('billets')->with([
     		'billets' => $billets

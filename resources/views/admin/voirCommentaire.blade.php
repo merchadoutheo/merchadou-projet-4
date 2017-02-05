@@ -23,6 +23,21 @@
                                 <div class="well">
                                     <p>{{ $commentaire->contenu }}</p>
                                 </div>
+                                @if($commentaire->statut == 1)
+                                    <a href="{{ route('commentaire.changeStatut', $commentaire->id) }}" class="btn btn-success btn-sm">
+                                    <span class="glyphicon glyphicon-ok"> En ligne</span>
+                                    </a>
+                                @else
+                                    <a href="{{ route('commentaire.changeStatut', $commentaire->id) }}" class="btn btn-warning btn-sm">
+                                    <span class="glyphicon glyphicon-time"> En attente</span>
+                                    </a>
+                                @endif
+                                <a href="{{ route('commentaire.supprimer', $commentaire->id) }}">
+                                <button class="btn btn-default btn-sm" data-toggle='modal' data-billet-id="{{ $commentaire->id }}" data-target="#modal">
+                                Supprimer le commentaire
+                                 <span class="glyphicon glyphicon-trash"></span>   
+                                </button>
+                                </a>
                             </div>
                           </div>
                         </div>
@@ -42,6 +57,9 @@
                             <em>Posté le {{ $commentaire->billet->created_at }}</em> par {{ $commentaire->billet->user->name }}.
                                 <div class="well">
                                     <p>{!! $commentaire->billet->contenu !!}</p>
+                                </div>
+                                <div class="btn-group pull-right">
+                                  <a href="{{ route('billet.edition', $commentaire->billet->id) }}" class="btn btn-primary">Modifier le billet <span class="glyphicon glyphicon-arrow-right"></span></a>
                                 </div>
                             </div>
                           </div>
