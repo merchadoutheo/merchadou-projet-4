@@ -14,10 +14,16 @@ Configuration de l'application dans le fichier `.env`:
 
 `cp .env.example .env`
 
+Creer la base de donnee (sqlite)
+
+`cd database`
+`cat > database.sqlite`
+
 Installer la base:
 
-`php artisan migrate`
+`php artisan migrate:install`
 
 Insérer les données factices:
 
 `php artisan db:seed`
+

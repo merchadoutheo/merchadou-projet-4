@@ -6,8 +6,8 @@
 		<div class="col-md-12">
 			<div class="panel panel-default">
 				<div class="panel-body">
-				<h1>La page n'existe pas</h1>
-				<h3>(Erreur 404)</h3>
+				<h1>Accès interdit</h1>
+				<h3>(Erreur 403)</h3>
 				</div>
 			<a href="{{ route('accueil') }}">Retour à la page d'accueil</a>
 		</div>
