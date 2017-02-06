@@ -3,12 +3,12 @@
 @section('content')
 <div class="container">
     <div class="row">
-        <div class="col-md-8 col-md-offset-2">
+        <div class="col-md-12">
             <div class="panel panel-default">
                 <div class="panel-heading">Auteur :  {{ $billet->user->name }}</div>
 
                 <div class="panel-body">
-
+                    <img style="margin:auto" src="{{ url('/'.$billet->urlImg) }}" alt="vignette" class="img-responsive">
                     <h2>{{ $billet->titre }}</h2>
                     <p>
                         {!! $billet->contenu !!}<br>

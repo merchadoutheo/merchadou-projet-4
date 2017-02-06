@@ -99,6 +99,14 @@ class PostController extends Controller
         $billet->titre = $request->titre;
         $billet->contenu = $request->contenu;
         $billet->statut = $request->statut;
+
+        if($request->vignette != null)
+        {
+            $ext = $request->vignette->guessClientExtension();
+            $request->vignette->storeAs('img/Vignette/', str_slug('vignette-'.$request->titre).'.'.$ext);
+            $billet->urlImg = 'img/Vignette/'.str_slug('vignette-'.$request->titre).'.'.$ext;
+        }
+
         $billet->save();
 
         return redirect()->route('accueil.admin');

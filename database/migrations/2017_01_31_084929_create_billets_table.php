@@ -17,7 +17,7 @@ class CreateBilletsTable extends Migration
             $table->increments('id');
             $table->string('titre');
             $table->text('contenu');
-            $table->text('urlImg')->default('default-billet-img.jpg');
+            $table->text('urlImg')->default('img/default-billet-img.jpg');
             $table->integer('user_id')->unsigned();
             $table->boolean('statut')->default(0);
             $table->timestamps();
