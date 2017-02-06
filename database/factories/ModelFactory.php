@@ -4,9 +4,9 @@
 $factory->define(App\Models\Billet::class, function (Faker\Generator $faker) {
 
     return [
-        'titre' => $faker->realText(20),
-        'contenu' => $faker->realText(300),
-        // 'urlImg' => $faker->imageUrl(),
+        'titre' => $faker->realText(30),
+        'contenu' => $faker->realText(6000),
+        'urlImg' => $faker->imageUrl(),
         'statut' => mt_rand(0,1),
         'user_id' => 1
     ];

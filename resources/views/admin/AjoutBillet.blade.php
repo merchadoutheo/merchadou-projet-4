@@ -37,7 +37,7 @@
                               <option value="0">Brouillon</option>
                             </select>
                         </div>
-                        <div class="form-group">
+                        <div class="form-group{{ $errors->has('vignette') ? ' has-error' : '' }}">
                             <label for="vignette">Vignette</label>
                             <input type="file" name="vignette" id="vignette">Choisissez une image</input>
                             @if($errors->has('vignette'))

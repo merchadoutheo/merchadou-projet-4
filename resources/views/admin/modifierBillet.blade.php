@@ -41,9 +41,9 @@
                               <option value="0">Brouillon</option>
                             </select>
                         </div>  
-                        <div class="form-group">
-                            <img src="{{ url('/'.$billet->urlImg) }}" alt="vignette" class="img-responsive">
+                        <div class="form-group{{ $errors->has('vignette') ? ' has-error' : '' }}">
                             <label for="vignette">Vignette</label>
+                            <img src="{{ url('/'.$billet->urlImg) }}" alt="vignette" class="img-responsive" width="300">
                             <input type="file" name="vignette" id="vignette">Choisissez une image</input>
                             @if($errors->has('vignette'))
                             <span class="help-block">{{ $errors->first('vignette') }}</span>

@@ -53,7 +53,7 @@ class PostController extends Controller
     {   
         $validation = \Validator::make($request->all(), [
             'titre' => 'required|min:3',
-            'contenu' => 'required|min:10|max:1000',
+            'contenu' => 'required|min:10|max:10000',
             'vignette' => 'image'
         ]);
 
@@ -93,6 +93,16 @@ class PostController extends Controller
 
     public function update(Request $request, $id)
     {
+         $validation = \Validator::make($request->all(), [
+            'titre' => 'required|min:3',
+            'contenu' => 'required|min:10|max:10000',
+            'vignette' => 'image'
+        ]);
+
+        if ($validation->fails())
+        {
+            return redirect()->back()->withErrors($validation)->withInput();
+        }
         
         $billet = Billet::find($id);
 
