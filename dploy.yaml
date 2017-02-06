@@ -8,7 +8,7 @@ master:
      privateKey: "~/.ssh/id_rsa"
      publicKey: "~/.ssh/id_rsa.pub"
      exclude: ["dploy.yaml"]
-     branch: "staging"
+     branch: "master"
      path:
          local: ""
          remote: "sd/projet4/"
