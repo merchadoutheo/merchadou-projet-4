@@ -20,7 +20,7 @@ class PostController extends Controller
     public function show($id)
     {
  
-    	$billet = Billet::with('commentaires')->find($id);
+    	$billet = Billet::with('commentaires')->findOrFail($id);
 
     	return view('showBillet')->with([
     		'billet' => $billet,

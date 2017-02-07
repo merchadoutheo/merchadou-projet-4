@@ -39,11 +39,11 @@
                                     <td class="statut">
                                         @if($billet->statut == 1)
                                             <a href="{{ route('billet.changeStatut', $billet->id) }}" class="btn btn-success btn">
-                                            <span class="glyphicon glyphicon-ok"> En ligne</span>
+                                            <span class="glyphicon glyphicon-ok"><span class="hidden-xs hidden-sm"> En ligne</span></span>
                                             </a>
                                         @else
                                             <a href="{{ route('billet.changeStatut', $billet->id) }}" class="btn btn-danger btn">
-                                            <span class="glyphicon glyphicon-remove"> Brouillon</span>
+                                            <span class="glyphicon glyphicon-remove"><span class="hidden-xs hidden-sm "> Brouillon</span></span>
                                             </a>
                                         @endif
                                     </td>

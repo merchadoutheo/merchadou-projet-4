@@ -23,7 +23,7 @@ class PostController extends Controller
     public function show($id)
     {
  
-    	$billet = Billet::with('commentaires')->find($id);
+    	$billet = Billet::with('commentaires')->findOrFail($id);
 
     	return view('showBillet')->with([
     		'billet' => $billet,
@@ -33,7 +33,7 @@ class PostController extends Controller
 
     public function changeStatut($id)
     {
-        $billet = Billet::find($id);
+        $billet = Billet::findOrFail($id);
         if ($billet->statut == 1) {
             $billet->statut = 0;
         }
@@ -104,7 +104,7 @@ class PostController extends Controller
             return redirect()->back()->withErrors($validation)->withInput();
         }
         
-        $billet = Billet::find($id);
+        $billet = Billet::findOrFail($id);
 
         $billet->titre = $request->titre;
         $billet->contenu = $request->contenu;

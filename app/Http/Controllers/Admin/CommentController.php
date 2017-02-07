@@ -21,7 +21,7 @@ class CommentController extends Controller
 
     public function changeStatut($id)
     {
-    	$commentaire = Commentaire::find($id);
+    	$commentaire = Commentaire::findOrFail($id);
 
     	if ($commentaire->statut == 1) {
     		$commentaire->statut = 0;

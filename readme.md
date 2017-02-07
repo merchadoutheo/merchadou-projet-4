@@ -16,8 +16,7 @@ Configuration de l'application dans le fichier `.env`:
 
 Creer la base de donnee (sqlite)
 
-`cd database`
-`cat > database.sqlite`
+`touch database/database.sqlite`
 
 Installer la base:
 

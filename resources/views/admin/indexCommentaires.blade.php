@@ -20,9 +20,9 @@
                                 <thead>
                                     <tr>
                                         <th class="col-md-1">ID</th>
-                                        <th class="col-md-3">Titre du Billet</th>
+                                        <th class="col-md-2">Titre du Billet</th>
                                         <th class="col-md-2">Pseudo</th>
-                                        <th class="col-md-3">Date d'ajout</th>
+                                        <th class="col-md-2">Date d'ajout</th>
                                         <th class="col-md-3">Statut</th>
                                         <th class="col-md-1">Voir</th>
                                         <th class="col-md-1">Supprimer</th>
@@ -37,11 +37,11 @@
                                     <td class="statut">
                                         @if($commentaire->statut == 1)
                                             <a href="{{ route('commentaire.changeStatut', $commentaire->id) }}" class="btn btn-success btn">
-                                            <span class="glyphicon glyphicon-ok"> En ligne</span>
+                                            <span class="glyphicon glyphicon-ok"><span class="hidden-xs hidden-sm"> En ligne</span></span>
                                             </a>
                                         @else
                                             <a href="{{ route('commentaire.changeStatut', $commentaire->id) }}" class="btn btn-warning">
-                                            <span class="glyphicon glyphicon-time"> En attente</span>
+                                            <span class="glyphicon glyphicon-time"><span class="hidden-xs hidden-sm"> En attente</span></span>
                                             </a>
                                         @endif
                                     </td>
