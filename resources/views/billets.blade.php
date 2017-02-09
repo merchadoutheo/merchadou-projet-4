@@ -19,7 +19,7 @@
                              @else
                              @foreach($billets as $billet)
                              <div class="col-page col-sm-4 col-md-3">
-                              <a href="{{ route('billet.voir', $billet->id) }}"  class="fondo-publicacion-home">
+                              <a href="{{ route('billet.voir', $billet->slug) }}"  class="fondo-publicacion-home">
                                 <div class="img-publicacion-home">
                                   <img class="img-responsive" src="{{ $billet->urlImg }}">
                               </div>

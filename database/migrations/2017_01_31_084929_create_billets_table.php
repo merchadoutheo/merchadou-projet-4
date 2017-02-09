@@ -20,6 +20,7 @@ class CreateBilletsTable extends Migration
             $table->text('urlImg')->default('img/default-billet-img.jpg');
             $table->integer('user_id')->unsigned();
             $table->boolean('statut')->default(0);
+            $table->string('slug')->nullable();
             $table->timestamps();
         });
     }

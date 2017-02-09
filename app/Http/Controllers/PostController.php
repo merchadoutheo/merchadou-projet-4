@@ -17,10 +17,10 @@ class PostController extends Controller
 
     }
 
-    public function show($id)
+    public function show($slug)
     {
  
-    	$billet = Billet::with('commentaires')->findOrFail($id);
+    	$billet = Billet::with('commentaires')->where('slug', '=' , $slug)->firstOrFail();
 
     	return view('showBillet')->with([
     		'billet' => $billet,

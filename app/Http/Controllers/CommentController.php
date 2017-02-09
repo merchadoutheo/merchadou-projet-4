@@ -8,10 +8,10 @@ use App\Models\Commentaire;
 
 class CommentController extends Controller
 {
-    public function send(Request $request, $id)
+    public function send(Request $request, $slug)
     {
     	// vérifier le billet
-    	$billet = Billet::findOrFail($id);
+    	$billet = Billet::where('slug', '=' ,slug)->firstOrFail();
 
     	// vérifier le commentaire
     	$validation = \Validator::make($request->all(), [

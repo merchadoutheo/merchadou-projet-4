@@ -14,7 +14,7 @@
 
                 <div class="panel-body">
 
-                    <form action="{{ route('billet.update', $billet->id) }}" method="POST" enctype="multipart/form-data">
+                    <form action="{{ route('billet.update', $billet->slug) }}" method="POST" enctype="multipart/form-data">
                         {{ csrf_field() }}
                         <div class="form-group{{ $errors->has('titre') ? ' has-error' : '' }}">
                             <label for="titre">Titre</label>

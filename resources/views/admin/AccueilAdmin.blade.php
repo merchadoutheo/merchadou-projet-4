@@ -34,26 +34,26 @@
                                 @foreach($billets as $billet)
                                 <tr>
                                     <td>{{ $billet->id }}</td>
-                                    <td class="titre-billet-admin"><a href="{{ route('billet.voir', $billet->id) }}">{{ $billet->titre }}</a></td>
+                                    <td class="titre-billet-admin"><a href="{{ route('billet.voir', $billet->slug) }}">{{ $billet->titre }}</a></td>
                                     <td>{{ $billet->created_at }}</td>
                                     <td class="statut">
                                         @if($billet->statut == 1)
-                                            <a href="{{ route('billet.changeStatut', $billet->id) }}" class="btn btn-success btn">
+                                            <a href="{{ route('billet.changeStatut', $billet->slug) }}" class="btn btn-success btn">
                                             <span class="glyphicon glyphicon-ok"><span class="hidden-xs hidden-sm"> En ligne</span></span>
                                             </a>
                                         @else
-                                            <a href="{{ route('billet.changeStatut', $billet->id) }}" class="btn btn-danger btn">
+                                            <a href="{{ route('billet.changeStatut', $billet->slug) }}" class="btn btn-danger btn">
                                             <span class="glyphicon glyphicon-remove"><span class="hidden-xs hidden-sm "> Brouillon</span></span>
                                             </a>
                                         @endif
                                     </td>
                                     <td>
-                                        <a href="{{ route('billet.edition', $billet->id) }}" class="btn btn-primary btn">
+                                        <a href="{{ route('billet.edition', $billet->slug) }}" class="btn btn-primary btn">
                                             <span class="glyphicon glyphicon-pencil"></span>
                                         </a>
                                     </td>
                                     <td>
-                                        <a href="{{ route('billet.supprimer', $billet->id) }}">
+                                        <a href="{{ route('billet.supprimer', $billet->slug) }}">
                                         <button class="btn btn-default btn" data-toggle='modal' data-billet-id="{{ $billet->id }}" data-target="#modal">
                                          <span class="glyphicon glyphicon-trash"></span>   
                                         </button>

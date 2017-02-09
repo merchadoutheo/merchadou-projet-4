@@ -14,7 +14,7 @@
 Auth::routes();
 Route::get('/', 'PostController@index')->name('accueil');
 Route::get('/home', 'HomeController@index');
-Route::get('/showBillet/{id}', 'PostController@show')->name('billet.voir');
+Route::get('/showBillet/{slug}', 'PostController@show')->name('billet.voir');
 Route::post('/sendComment/{id}', 'CommentController@send')->name('billet.comment');
 
 Route::group([
@@ -26,12 +26,12 @@ Route::group([
 	 * Gestion des Billets
 	 */
 	Route::get('/','PostController@index')->name('accueil.admin');
-	Route::get('/ChangeStatut/Billet/{id}','PostController@ChangeStatut')->name('billet.changeStatut');
+	Route::get('/ChangeStatut/Billet/{slug}','PostController@ChangeStatut')->name('billet.changeStatut');
 	Route::get('/AjouterUnBillet', 'PostController@AjoutBillet')->name('billet.formAjout');
 	Route::post('/SendBillet', 'PostController@send')->name('billet.ajout');
-	Route::get('/SupressionBillet/{id}', 'PostController@suppression')->name('billet.supprimer');
-	Route::get('/ModifierBillet/{id}', 'PostController@edition')->name('billet.edition');
-	Route::post('/updateBillet/{id}', 'PostController@update')->name('billet.update');
+	Route::get('/SupressionBillet/{slug}', 'PostController@suppression')->name('billet.supprimer');
+	Route::get('/ModifierBillet/{slug}', 'PostController@edition')->name('billet.edition');
+	Route::post('/updateBillet/{slug}', 'PostController@update')->name('billet.update');
 
 	/**
 	 * Gestion des Commentaires
