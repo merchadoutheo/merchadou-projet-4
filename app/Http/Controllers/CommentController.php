@@ -11,7 +11,7 @@ class CommentController extends Controller
     public function send(Request $request, $slug)
     {
     	// vérifier le billet
-    	$billet = Billet::where('slug', '=' ,slug)->firstOrFail();
+    	$billet = Billet::where('slug', '=' , $slug)->firstOrFail();
 
     	// vérifier le commentaire
     	$validation = \Validator::make($request->all(), [
@@ -25,11 +25,10 @@ class CommentController extends Controller
     		return redirect()->back()->withErrors($validation)->withInput();
     	}
 
-    	// sinon on affiche l'erreur du commentaire
     	$comment = new Commentaire;
     	$comment->pseudo = $request->pseudo;
     	$comment->contenu = $request->contenu;
-    	$comment->billet_id = $id;
+    	$comment->billet_id = $billet->id;
     	$comment->save();
 
     	return redirect()->back();

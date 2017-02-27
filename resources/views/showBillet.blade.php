@@ -40,7 +40,7 @@
 
                     <hr />
 
-                    <form action="{{ route('billet.comment', $billet->id) }}" method="POST">
+                    <form action="{{ route('billet.comment', $billet->slug) }}" method="POST">
                         {{ csrf_field() }}
                         <div class="form-group{{ $errors->has('pseudo') ? ' has-error' : '' }}">
                             <label for="pseudo">Pseudo</label>

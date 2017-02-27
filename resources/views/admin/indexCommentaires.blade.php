@@ -51,7 +51,7 @@
                                         </a>
                                     </td>
                                     <td>
-                                        <a href="{{ route('commentaire.supprimer', $commentaire->id) }}">
+                                        <a href="{{ route('commentaire.supprimer', $commentaire->slug) }}">
                                         <button class="btn btn-default btn" data-toggle='modal' data-billet-id="{{ $commentaire->id }}" data-target="#modal">
                                          <span class="glyphicon glyphicon-trash"></span>   
                                         </button>

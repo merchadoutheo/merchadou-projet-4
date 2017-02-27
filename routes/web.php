@@ -15,7 +15,7 @@ Auth::routes();
 Route::get('/', 'PostController@index')->name('accueil');
 Route::get('/home', 'HomeController@index');
 Route::get('/showBillet/{slug}', 'PostController@show')->name('billet.voir');
-Route::post('/sendComment/{id}', 'CommentController@send')->name('billet.comment');
+Route::post('/sendComment/{slug}', 'CommentController@send')->name('billet.comment');
 
 Route::group([
 	'prefix' => 'admin',
@@ -37,8 +37,8 @@ Route::group([
 	 * Gestion des Commentaires
 	 */
 	Route::get('/Commentaires','CommentController@index')->name('index.commentaire');
-	Route::get('/ChangeStatut/Commentaire/{id}', 'CommentController@changeStatut')->name('commentaire.changeStatut');
-	Route::get('/suppressionCommentaire/{id}', 'CommentController@suppression')->name('commentaire.supprimer');
-	Route::get('/VoirCommentaire/{id}','CommentController@voirCommentaire')->name('commentaire.voir');
+	Route::get('/ChangeStatut/Commentaire/{slug}', 'CommentController@changeStatut')->name('commentaire.changeStatut');
+	Route::get('/suppressionCommentaire/{slug}', 'CommentController@suppression')->name('commentaire.supprimer');
+	Route::get('/VoirCommentaire/{slug}','CommentController@voirCommentaire')->name('commentaire.voir');
 
 });

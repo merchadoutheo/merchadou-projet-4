@@ -59,7 +59,7 @@
                                     <p>{!! $commentaire->billet->contenu !!}</p>
                                 </div>
                                 <div class="btn-group pull-right">
-                                  <a href="{{ route('billet.edition', $commentaire->billet->id) }}" class="btn btn-primary">Modifier le billet <span class="glyphicon glyphicon-arrow-right"></span></a>
+                                  <a href="{{ route('billet.edition', $commentaire->billet->slug) }}" class="btn btn-primary">Modifier le billet <span class="glyphicon glyphicon-arrow-right"></span></a>
                                 </div>
                             </div>
                           </div>
